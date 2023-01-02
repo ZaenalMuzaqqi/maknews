@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:maknews/config/app_route.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,6 +12,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
+      onGenerateRoute: AppRoutes.onGenerateRoutes,
     );
   }
 }
