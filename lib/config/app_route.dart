@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../pages/main_page.dart';
 import '../pages/splash_page.dart';
 
 class AppRoutes {
@@ -11,6 +12,8 @@ class AppRoutes {
     switch (settings.name) {
       case '/':
         return _materialRoute(const SplashPage());
+      case '/main_page':
+        return _materialRoute(const MainPage());
 
       default:
         return null;
