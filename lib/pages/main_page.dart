@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:maknews/config/constant.dart';
+import 'package:maknews/pages/home_page.dart';
+
+import '../widgets/bottom_navigation.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({super.key});
@@ -17,7 +19,7 @@ class _MainPageState extends State<MainPage> {
     Widget buildPage(currentIndex) {
       switch (currentIndex) {
         case 0:
-          return Container(color: Colors.green);
+          return const HomePage();
         case 1:
           return Container(color: Colors.teal);
         case 2:
@@ -83,45 +85,6 @@ class _MainPageState extends State<MainPage> {
             ],
           ),
         ),
-      ),
-    );
-  }
-}
-
-class NavigationItem extends StatelessWidget {
-  const NavigationItem({
-    Key? key,
-    required this.icon,
-    this.color = defaultColor,
-    this.label = 'label menu',
-    this.onTap,
-  }) : super(key: key);
-
-  final Color? color;
-  final String icon;
-  final String? label;
-  final VoidCallback? onTap;
-
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: onTap,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          SvgPicture.asset(
-            icon,
-            height: 20.0,
-            width: 20.0,
-          ),
-          Text(
-            label!,
-            style: TextStyle(
-              color: color,
-              fontSize: 12.0,
-            ),
-          )
-        ],
       ),
     );
   }

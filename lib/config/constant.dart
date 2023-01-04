@@ -1,4 +1,4 @@
-import 'dart:ui';
+import 'package:flutter/material.dart';
 
 // ICON
 const String logoMaknews = 'assets/icons/logo.svg';
@@ -13,6 +13,7 @@ const String iconBookmarkDisabled = 'assets/icons/bookmark_disabled.svg';
 
 // COLOR
 const Color defaultColor = Color(0xFF594ED9);
+const Color yellowColor = Color(0xFFFFC253);
 const Color disabledColor = Color(0xFFB5BBC6);
 const Color hintColor = Color(0xFFB5BBC6);
 const Color backgroundColor = Color(0xFFF4F4F4);
@@ -29,5 +30,7 @@ FontWeight heavy = FontWeight.w800;
 FontWeight black = FontWeight.w900;
 
 // FONT/TEXT
-TextStyle defaultTextStyle = TextStyle(color: defaultColor);
-TextStyle hintTextStyle = TextStyle(color: hintColor);
+TextStyle defaultTextStyle = const TextStyle(color: defaultColor);
+TextStyle blackTextStyle = const TextStyle(color: Colors.black);
+TextStyle yellowTextStyle = const TextStyle(color: yellowColor);
+TextStyle hintTextStyle = const TextStyle(color: hintColor);
