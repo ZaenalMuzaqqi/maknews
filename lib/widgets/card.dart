@@ -152,3 +152,48 @@ class ListCard extends StatelessWidget {
     );
   }
 }
+
+class CardImage extends StatelessWidget {
+  const CardImage({
+    Key? key,
+    required this.image,
+    this.text = '',
+    this.onTap,
+  }) : super(key: key);
+  final String image;
+  final String? text;
+  final VoidCallback? onTap;
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        height: 120.0,
+        width: double.infinity,
+        decoration: BoxDecoration(
+          color: Colors.black,
+          borderRadius: BorderRadius.circular(6),
+          image: DecorationImage(
+            colorFilter: ColorFilter.mode(
+              Colors.black.withOpacity(0.75),
+              BlendMode.dstATop,
+            ),
+            fit: BoxFit.cover,
+            image: AssetImage(image),
+          ),
+        ),
+        child: Center(
+          child: Text(
+            text!,
+            textAlign: TextAlign.center,
+            style: whiteTextStyle.copyWith(
+              fontSize: 20.0,
+              fontWeight: bold,
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}

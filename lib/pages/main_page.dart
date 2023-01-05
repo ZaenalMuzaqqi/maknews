@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:maknews/config/constant.dart';
+import 'package:maknews/pages/category_page.dart';
 import 'package:maknews/pages/home_page.dart';
 
 import '../widgets/bottom_navigation.dart';
@@ -21,7 +22,7 @@ class _MainPageState extends State<MainPage> {
         case 0:
           return const HomePage();
         case 1:
-          return Container(color: Colors.teal);
+          return const CategoryPage();
         case 2:
           return Container(color: Colors.blue);
         case 3:
@@ -33,7 +34,12 @@ class _MainPageState extends State<MainPage> {
 
     return Scaffold(
       backgroundColor: backgroundColor,
-      body: buildPage(currentIndex),
+      body: Container(
+        color: Colors.white,
+        child: SafeArea(
+          child: buildPage(currentIndex),
+        ),
+      ),
       bottomNavigationBar: SafeArea(
         child: Container(
           height: 54.0,
