@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../pages/category_detail_page.dart';
 import '../pages/main_page.dart';
 import '../pages/splash_page.dart';
 
@@ -14,6 +15,8 @@ class AppRoutes {
         return _materialRoute(const SplashPage());
       case '/main_page':
         return _materialRoute(const MainPage());
+      case '/category_detail_page':
+        return _materialRoute(const CategoryDetailPage());
 
       default:
         return null;

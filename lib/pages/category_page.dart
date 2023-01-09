@@ -41,6 +41,9 @@ class _CategoryPageState extends State<CategoryPage> {
             itemCount: categoryList.length,
             itemBuilder: (BuildContext ctx, index) {
               return CardImage(
+                onTap: () {
+                  Navigator.pushNamed(context, '/category_detail_page');
+                },
                 image: imageList[index],
                 text: categoryList[index],
               );
