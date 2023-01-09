@@ -62,11 +62,11 @@ class HeroCard extends StatelessWidget {
             fontWeight: regular,
           ),
         ),
-        const Padding(
-          padding: EdgeInsets.symmetric(vertical: 16.0),
+        Padding(
+          padding: const EdgeInsets.symmetric(vertical: 16.0),
           child: Divider(
-            color: disabledColor,
-            height: 1.0,
+            color: disabledColor.withOpacity(0.16),
+            height: 1.5,
           ),
         )
       ],
@@ -107,7 +107,7 @@ class ListCard extends StatelessWidget {
                       ),
                       child: Text(
                         date!.toUpperCase(),
-                        style: yellowTextStyle.copyWith(
+                        style: hintTextStyle.copyWith(
                           fontSize: 12,
                           fontWeight: regular,
                         ),
@@ -126,6 +126,7 @@ class ListCard extends StatelessWidget {
               CachedNetworkImage(
                 imageUrl: imageUrl!,
                 imageBuilder: (context, imageProvider) => Container(
+                  margin: const EdgeInsets.only(left: 8.0),
                   width: 105.0,
                   height: 80.0,
                   decoration: BoxDecoration(
@@ -140,10 +141,10 @@ class ListCard extends StatelessWidget {
               ),
             ],
           ),
-          const Padding(
-            padding: EdgeInsets.symmetric(vertical: 16.0),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 16.0),
             child: Divider(
-              color: disabledColor,
+              color: Colors.black.withOpacity(0.08),
               height: 1.0,
             ),
           ),

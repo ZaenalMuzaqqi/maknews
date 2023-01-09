@@ -10,6 +10,7 @@ const String iconSearch = 'assets/icons/search.svg';
 const String iconSearchDisabled = 'assets/icons/search_disabled.svg';
 const String iconBookmark = 'assets/icons/bookmark.svg';
 const String iconBookmarkDisabled = 'assets/icons/bookmark_disabled.svg';
+const String iconSearchWidget = 'assets/icons/search_widget.svg';
 
 //IMAGE
 const String imageBusiness = 'assets/images/business.jpg';

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:maknews/config/constant.dart';
 import 'package:maknews/pages/category_page.dart';
 import 'package:maknews/pages/home_page.dart';
+import 'package:maknews/pages/search_page.dart';
 
 import '../widgets/bottom_navigation.dart';
 
@@ -24,7 +25,7 @@ class _MainPageState extends State<MainPage> {
         case 1:
           return const CategoryPage();
         case 2:
-          return Container(color: Colors.blue);
+          return const SearchPage();
         case 3:
           return Container(color: Colors.indigo);
         default:
