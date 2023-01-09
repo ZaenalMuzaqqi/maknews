@@ -5,6 +5,7 @@ import 'package:maknews/pages/home_page.dart';
 import 'package:maknews/pages/search_page.dart';
 
 import '../widgets/bottom_navigation.dart';
+import 'bookmark_page.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({super.key});
@@ -27,9 +28,9 @@ class _MainPageState extends State<MainPage> {
         case 2:
           return const SearchPage();
         case 3:
-          return Container(color: Colors.indigo);
+          return const BookmarkPage();
         default:
-          return Container(color: Colors.purple);
+          return const HomePage();
       }
     }
 
