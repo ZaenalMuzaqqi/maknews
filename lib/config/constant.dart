@@ -11,6 +11,8 @@ const String iconSearchDisabled = 'assets/icons/search_disabled.svg';
 const String iconBookmark = 'assets/icons/bookmark.svg';
 const String iconBookmarkDisabled = 'assets/icons/bookmark_disabled.svg';
 const String iconSearchWidget = 'assets/icons/search_widget.svg';
+const String iconShare = 'assets/icons/share.svg';
+const String iconArrowBack = 'assets/icons/arrow_back.svg';
 
 //IMAGE
 const String imageBusiness = 'assets/images/business.jpg';
@@ -23,6 +25,7 @@ const String imageTechnology = 'assets/images/technology.jpg';
 
 // COLOR
 const Color defaultColor = Color(0xFF594ED9);
+const Color blackColor = Color(0xFF19163D);
 const Color yellowColor = Color(0xFFFFC253);
 const Color disabledColor = Color(0xFFB5BBC6);
 const Color hintColor = Color(0xFFB5BBC6);

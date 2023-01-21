@@ -30,9 +30,9 @@ class _HomePageState extends State<HomePage> {
         color: Colors.white,
         padding: const EdgeInsets.all(16.0),
         child: Column(
-          children: const [
+          children: [
             //HERO Card
-            HeroCard(
+            const HeroCard(
               date: '03 JUN 2020 8:30',
               imageUrl:
                   'https://images.unsplash.com/photo-1591628013840-58dbb435be89?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80',
@@ -46,11 +46,14 @@ class _HomePageState extends State<HomePage> {
             ListCard(
               date: '03 JUN 2022 07:21',
               title: 'Texas Democrats plan to create a voter registration army',
+              onTap: () {
+                Navigator.pushNamed(context, '/article');
+              },
               imageUrl:
                   'https://images.unsplash.com/photo-1616587226157-48e49175ee20?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80',
             ),
 
-            ListCard(
+            const ListCard(
               date: '03 JUN 2022 07:21',
               title:
                   'A restaurant owner, a football star: the people killed as protests spread',
