@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:maknews/config/constant.dart';
-import 'package:maknews/pages/category_page.dart';
-import 'package:maknews/pages/home_page.dart';
-import 'package:maknews/pages/search_page.dart';
 
 import '../widgets/bottom_navigation.dart';
+
+import 'home_page.dart';
+import 'category_page.dart';
+import 'search_page.dart';
 import 'bookmark_page.dart';
 
 class MainPage extends StatefulWidget {
@@ -44,12 +45,13 @@ class _MainPageState extends State<MainPage> {
       ),
       bottomNavigationBar: SafeArea(
         child: Container(
-          height: 54.0,
+          height: 50.0,
           padding: const EdgeInsets.all(8),
           color: backgroundColor,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
+              //Item Home
               NavigationItem(
                 color: defaultColor,
                 icon: iconHome,
@@ -60,6 +62,8 @@ class _MainPageState extends State<MainPage> {
                   });
                 },
               ),
+
+              //Item Category
               NavigationItem(
                 color: hintColor,
                 icon: iconCategoryDisabled,
@@ -70,6 +74,8 @@ class _MainPageState extends State<MainPage> {
                   });
                 },
               ),
+
+              //Item Search
               NavigationItem(
                 color: hintColor,
                 icon: iconSearchDisabled,
@@ -80,6 +86,8 @@ class _MainPageState extends State<MainPage> {
                   });
                 },
               ),
+
+              //Item Bookmarks
               NavigationItem(
                 color: hintColor,
                 icon: iconBookmarkDisabled,

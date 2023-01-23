@@ -21,22 +21,27 @@ class NavigationItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: onTap,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          SvgPicture.asset(
-            icon,
-            height: 20.0,
-            width: 20.0,
-          ),
-          Text(
-            label!,
-            style: TextStyle(
-              color: color,
-              fontSize: 12.0,
+      child: Container(
+        color: Colors.transparent,
+        height: 50.0,
+        width: 75.74,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            SvgPicture.asset(
+              icon,
+              height: 20.0,
+              width: 20.0,
             ),
-          )
-        ],
+            Text(
+              label!,
+              style: TextStyle(
+                color: color,
+                fontSize: 12.0,
+              ),
+            )
+          ],
+        ),
       ),
     );
   }

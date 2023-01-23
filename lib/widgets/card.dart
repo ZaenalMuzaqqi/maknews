@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:maknews/widgets/custom_placeholder.dart';
 
 import '../config/constant.dart';
 
@@ -10,57 +11,110 @@ class HeroCard extends StatelessWidget {
     this.imageUrl = '',
     this.title = '',
     this.description = '',
+    this.onTap,
   }) : super(key: key);
 
   final String? imageUrl;
   final String? date;
   final String? title;
   final String? description;
+  final VoidCallback? onTap;
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          CachedNetworkImage(
+            imageUrl: imageUrl!,
+            imageBuilder: (context, imageProvider) => Container(
+              width: double.infinity,
+              height: 180.0,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(6),
+                image: DecorationImage(image: imageProvider, fit: BoxFit.cover),
+              ),
+            ),
+            placeholder: (context, url) => CustomPlaceholder(
+              borderRadius: BorderRadius.circular(6),
+              width: double.infinity,
+              height: 180.0,
+            ),
+            errorWidget: (context, url, error) => const Icon(Icons.error),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(top: 24.0),
+            child: Text(
+              date!.toUpperCase(),
+              style: hintTextStyle.copyWith(
+                fontSize: 12.0,
+                fontWeight: medium,
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 8.0),
+            child: Text(
+              title!,
+              style: blackTextStyle.copyWith(
+                fontSize: 24,
+                fontWeight: bold,
+              ),
+            ),
+          ),
+          Text(
+            description!,
+            style: blackTextStyle.copyWith(
+              fontSize: 14,
+              fontWeight: regular,
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 16.0),
+            child: Divider(
+              color: disabledColor.withOpacity(0.16),
+              height: 1.5,
+            ),
+          )
+        ],
+      ),
+    );
+  }
+}
+
+class HeroCardLoading extends StatelessWidget {
+  const HeroCardLoading({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        CachedNetworkImage(
-          imageUrl: imageUrl!,
-          imageBuilder: (context, imageProvider) => Container(
-            width: double.infinity,
-            height: 180.0,
-            decoration: BoxDecoration(
+        CustomPlaceholder(
+          borderRadius: BorderRadius.circular(6),
+          width: double.infinity,
+          height: 180.0,
+        ),
+        Padding(
+            padding: const EdgeInsets.only(top: 24.0),
+            child: CustomPlaceholder(
               borderRadius: BorderRadius.circular(6),
-              image: DecorationImage(image: imageProvider, fit: BoxFit.cover),
-            ),
-          ),
-          placeholder: (context, url) => const CircularProgressIndicator(),
-          errorWidget: (context, url, error) => const Icon(Icons.error),
-        ),
+              width: 100,
+              height: 12,
+            )),
         Padding(
-          padding: const EdgeInsets.only(top: 24.0),
-          child: Text(
-            date!.toUpperCase(),
-            style: hintTextStyle.copyWith(
-              fontSize: 12.0,
-              fontWeight: medium,
-            ),
-          ),
-        ),
-        Padding(
-          padding: const EdgeInsets.symmetric(vertical: 8.0),
-          child: Text(
-            title!,
-            style: blackTextStyle.copyWith(
-              fontSize: 24,
-              fontWeight: bold,
-            ),
-          ),
-        ),
-        Text(
-          description!,
-          style: blackTextStyle.copyWith(
-            fontSize: 14,
-            fontWeight: regular,
-          ),
+            padding: const EdgeInsets.symmetric(vertical: 8.0),
+            child: CustomPlaceholder(
+              borderRadius: BorderRadius.circular(6),
+              width: double.infinity,
+              height: 56,
+            )),
+        CustomPlaceholder(
+          borderRadius: BorderRadius.circular(6.0),
+          width: double.infinity,
+          height: 36.0,
         ),
         Padding(
           padding: const EdgeInsets.symmetric(vertical: 16.0),
@@ -123,21 +177,26 @@ class ListCard extends StatelessWidget {
                   ],
                 ),
               ),
-              CachedNetworkImage(
-                imageUrl: imageUrl!,
-                imageBuilder: (context, imageProvider) => Container(
-                  margin: const EdgeInsets.only(left: 8.0),
-                  width: 105.0,
-                  height: 80.0,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(6),
-                    image: DecorationImage(
-                        image: imageProvider, fit: BoxFit.cover),
+              Padding(
+                padding: const EdgeInsets.only(left: 8.0),
+                child: CachedNetworkImage(
+                  imageUrl: imageUrl!,
+                  imageBuilder: (context, imageProvider) => Container(
+                    width: 105.0,
+                    height: 80.0,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(6),
+                      image: DecorationImage(
+                          image: imageProvider, fit: BoxFit.cover),
+                    ),
                   ),
+                  placeholder: (context, url) => CustomPlaceholder(
+                    width: 105,
+                    height: 80,
+                    borderRadius: BorderRadius.circular(6.0),
+                  ),
+                  errorWidget: (context, url, error) => const Icon(Icons.error),
                 ),
-                placeholder: (context, url) =>
-                    const CircularProgressIndicator(),
-                errorWidget: (context, url, error) => const Icon(Icons.error),
               ),
             ],
           ),
@@ -150,6 +209,60 @@ class ListCard extends StatelessWidget {
           ),
         ],
       ),
+    );
+  }
+}
+
+class ListCardLoading extends StatelessWidget {
+  const ListCardLoading({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Row(
+          children: [
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(
+                      top: 8.0,
+                      bottom: 16.0,
+                    ),
+                    child: CustomPlaceholder(
+                      borderRadius: BorderRadius.circular(6.0),
+                      height: 12.0,
+                      width: double.infinity,
+                    ),
+                  ),
+                  CustomPlaceholder(
+                    borderRadius: BorderRadius.circular(6.0),
+                    height: 40.0,
+                    width: double.infinity,
+                  ),
+                ],
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 8.0),
+              child: CustomPlaceholder(
+                borderRadius: BorderRadius.circular(6.0),
+                height: 80.0,
+                width: 105.0,
+              ),
+            ),
+          ],
+        ),
+        Padding(
+          padding: const EdgeInsets.symmetric(vertical: 16.0),
+          child: Divider(
+            color: Colors.black.withOpacity(0.08),
+            height: 1.0,
+          ),
+        ),
+      ],
     );
   }
 }

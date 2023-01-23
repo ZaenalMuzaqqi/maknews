@@ -21,46 +21,45 @@ class _HomePageState extends State<HomePage> {
         child: CustomAppBar(
           child: SvgPicture.asset(
             logoMaknews,
-            height: 30.0,
-            width: 125.0,
+            alignment: Alignment.centerLeft,
           ),
         ),
       ),
       body: Container(
         color: Colors.white,
         padding: const EdgeInsets.all(16.0),
-        child: Column(
-          children: [
-            //HERO Card
-            const HeroCard(
-              date: '03 JUN 2020 8:30',
-              imageUrl:
-                  'https://images.unsplash.com/photo-1591628013840-58dbb435be89?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80',
-              title: 'Thousands gather in London for George Floyd protest',
-              description:
-                  'Star Wars actor John Boyega among those taking part in Hyde Park Black Lives Matter protest',
-            ),
+        child: GestureDetector(
+          child: Column(
+            children: [
+              //HERO Card
+              HeroCard(
+                date: '03 JUN 2020 8:30',
+                imageUrl: photoList[0],
+                title: titleList[0],
+                description: descriptionList[0],
+              ),
 
-            //LIST REGULAR CARD
+              //LIST REGULAR CARD
 
-            ListCard(
-              date: '03 JUN 2022 07:21',
-              title: 'Texas Democrats plan to create a voter registration army',
-              onTap: () {
-                Navigator.pushNamed(context, '/article');
-              },
-              imageUrl:
-                  'https://images.unsplash.com/photo-1616587226157-48e49175ee20?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80',
-            ),
+              ListCard(
+                date: '03 JUN 2022 07:21',
+                title: titleList[1],
+                onTap: () {
+                  Navigator.pushNamed(context, '/article');
+                },
+                imageUrl: photoList[1],
+              ),
 
-            const ListCard(
-              date: '03 JUN 2022 07:21',
-              title:
-                  'A restaurant owner, a football star: the people killed as protests spread',
-              imageUrl:
-                  'https://images.unsplash.com/photo-1618887798986-1fa86bd22d32?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80',
-            ),
-          ],
+              ListCard(
+                date: '03 JUN 2022 07:21',
+                title: titleList[2],
+                onTap: () {
+                  Navigator.pushNamed(context, '/article');
+                },
+                imageUrl: photoList[2],
+              ),
+            ],
+          ),
         ),
       ),
     );

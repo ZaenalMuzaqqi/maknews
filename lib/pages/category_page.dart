@@ -15,7 +15,6 @@ class _CategoryPageState extends State<CategoryPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(44.0),
         child: CustomAppBar(
@@ -36,7 +35,7 @@ class _CategoryPageState extends State<CategoryPage> {
               mainAxisExtent: 120,
               crossAxisCount: 2,
               crossAxisSpacing: 16,
-              mainAxisSpacing: 16,
+              mainAxisSpacing: 36,
             ),
             itemCount: categoryList.length,
             itemBuilder: (BuildContext ctx, index) {

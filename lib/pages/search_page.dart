@@ -23,61 +23,62 @@ class _SearchPageState extends State<SearchPage> {
           child: const SearchBar(),
         ),
       ),
-      body: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            //Result Text
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: 16),
-              child: RichText(
-                text: TextSpan(
-                  style: hintTextStyle.copyWith(
-                    fontSize: 15.0,
-                    fontWeight: regular,
-                  ),
-                  children: <TextSpan>[
-                    const TextSpan(text: '3 Result for '),
-                    TextSpan(
-                      text: 'Indonesia',
-                      style: defaultTextStyle.copyWith(
-                          fontSize: 15.0,
-                          fontWeight: bold,
-                          fontStyle: FontStyle.italic),
-                    ),
-                  ],
-                ),
+      body: SingleChildScrollView(
+        child: Container(
+          padding: const EdgeInsets.symmetric(horizontal: 16.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              //Result Text
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 16),
+                child: resultText(3, 'Indonesian'),
               ),
-            ),
 
-            //List Result
+              //List Result
 
-            const ListCard(
-              date: '03 JUN 2022 07:21',
-              title:
-                  'Indonesia puts 100-island archipelago up for auction, sparking',
-              imageUrl:
-                  'https://images.unsplash.com/photo-1544644181-1484b3fdfc62?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80',
-            ),
+              ListCard(
+                date: '03 JUN 2022 07:21',
+                title: titleList[3],
+                imageUrl: photoList[3],
+              ),
 
-            const ListCard(
-              date: '03 JUN 2022 07:21',
-              title:
-                  'Indonesia bans sale of syrup medicines after at least 99 child  death',
-              imageUrl:
-                  'https://images.unsplash.com/photo-1586015555751-63bb77f4322a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80',
-            ),
+              ListCard(
+                date: '03 JUN 2022 07:21',
+                title: titleList[4],
+                imageUrl: photoList[4],
+              ),
 
-            const ListCard(
-              date: '03 JUN 2022 07:21',
-              title:
-                  'Indonesians wait for UK farm jobs after paying deposits of up to £2,500',
-              imageUrl:
-                  'https://images.unsplash.com/photo-1423483641154-5411ec9c0ddf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80',
-            ),
-          ],
+              ListCard(
+                date: '03 JUN 2022 07:21',
+                title: titleList[5],
+                imageUrl: photoList[5],
+              ),
+            ],
+          ),
         ),
+      ),
+    );
+  }
+
+  Widget resultText(int countResult, String keyword) {
+    return RichText(
+      text: TextSpan(
+        style: hintTextStyle.copyWith(
+          fontSize: 15.0,
+          fontWeight: regular,
+        ),
+        children: <TextSpan>[
+          TextSpan(text: '$countResult Result for '),
+          TextSpan(
+            text: keyword,
+            style: defaultTextStyle.copyWith(
+              fontSize: 15.0,
+              fontWeight: bold,
+              fontStyle: FontStyle.italic,
+            ),
+          ),
+        ],
       ),
     );
   }
