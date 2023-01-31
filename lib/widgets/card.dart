@@ -48,7 +48,7 @@ class HeroCard extends StatelessWidget {
             padding: const EdgeInsets.only(top: 24.0),
             child: Text(
               date!.toUpperCase(),
-              style: hintTextStyle.copyWith(
+              style: disabledTextStyle.copyWith(
                 fontSize: 12.0,
                 fontWeight: medium,
               ),
@@ -161,7 +161,7 @@ class ListCard extends StatelessWidget {
                       ),
                       child: Text(
                         date!.toUpperCase(),
-                        style: hintTextStyle.copyWith(
+                        style: disabledTextStyle.copyWith(
                           fontSize: 12,
                           fontWeight: regular,
                         ),

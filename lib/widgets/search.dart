@@ -29,7 +29,7 @@ class SearchBar extends StatelessWidget {
             borderSide: BorderSide.none,
           ),
           hintStyle:
-              hintTextStyle.copyWith(fontSize: 15.0, fontWeight: regular),
+              disabledTextStyle.copyWith(fontSize: 15.0, fontWeight: regular),
           hintText: hintText,
           fillColor: backgroundColor,
           filled: true,

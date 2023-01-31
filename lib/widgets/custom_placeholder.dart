@@ -18,7 +18,7 @@ class CustomPlaceholder extends StatelessWidget {
   Widget build(BuildContext context) {
     return Shimmer.fromColors(
       baseColor: backgroundColor,
-      highlightColor: hintColor,
+      highlightColor: disabledColor,
       child: Container(
         width: width,
         height: height,

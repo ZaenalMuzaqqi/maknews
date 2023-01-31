@@ -64,7 +64,7 @@ class _SearchPageState extends State<SearchPage> {
   Widget resultText(int countResult, String keyword) {
     return RichText(
       text: TextSpan(
-        style: hintTextStyle.copyWith(
+        style: disabledTextStyle.copyWith(
           fontSize: 15.0,
           fontWeight: regular,
         ),

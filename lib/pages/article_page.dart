@@ -114,7 +114,7 @@ class ArticlePage extends StatelessWidget {
             ),
             TextSpan(
               text: ' 03 JUN 2020 8:30',
-              style: hintTextStyle.copyWith(
+              style: disabledTextStyle.copyWith(
                 fontSize: 12.0,
                 fontWeight: regular,
               ),
@@ -150,7 +150,7 @@ class ArticlePage extends StatelessWidget {
                   ),
                   TextSpan(
                     text: ' in ',
-                    style: hintTextStyle.copyWith(
+                    style: disabledTextStyle.copyWith(
                       fontSize: 14.0,
                       fontWeight: regular,
                     ),

@@ -26,9 +26,7 @@ const String imageTechnology = 'assets/images/technology.jpg';
 // COLOR
 const Color defaultColor = Color(0xFF594ED9);
 const Color blackColor = Color(0xFF19163D);
-const Color yellowColor = Color(0xFFFFC253);
 const Color disabledColor = Color(0xFFB5BBC6);
-const Color hintColor = Color(0xFFB5BBC6);
 const Color backgroundColor = Color(0xFFF4F4F4);
 
 // FONTWEIGTH
@@ -46,8 +44,7 @@ FontWeight black = FontWeight.w900;
 TextStyle defaultTextStyle = const TextStyle(color: defaultColor);
 TextStyle blackTextStyle = const TextStyle(color: blackColor);
 TextStyle whiteTextStyle = const TextStyle(color: Colors.white);
-TextStyle yellowTextStyle = const TextStyle(color: yellowColor);
-TextStyle hintTextStyle = const TextStyle(color: hintColor);
+TextStyle disabledTextStyle = const TextStyle(color: disabledColor);
 
 //LIST
 List categoryList = [

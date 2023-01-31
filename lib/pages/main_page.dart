@@ -65,7 +65,7 @@ class _MainPageState extends State<MainPage> {
 
               //Item Category
               NavigationItem(
-                color: hintColor,
+                color: disabledColor,
                 icon: iconCategoryDisabled,
                 label: 'Categories',
                 onTap: () {
@@ -77,7 +77,7 @@ class _MainPageState extends State<MainPage> {
 
               //Item Search
               NavigationItem(
-                color: hintColor,
+                color: disabledColor,
                 icon: iconSearchDisabled,
                 label: 'Search',
                 onTap: () {
@@ -89,7 +89,7 @@ class _MainPageState extends State<MainPage> {
 
               //Item Bookmarks
               NavigationItem(
-                color: hintColor,
+                color: disabledColor,
                 icon: iconBookmarkDisabled,
                 label: 'Bookmarks',
                 onTap: () {
