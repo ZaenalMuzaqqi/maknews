@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import '../config/constant.dart';
+import '../../config/constant.dart';
+import '../bloc/cubit/page_cubit.dart';
 
 class NavigationItem extends StatelessWidget {
   const NavigationItem({
@@ -9,18 +11,20 @@ class NavigationItem extends StatelessWidget {
     required this.icon,
     this.color = defaultColor,
     this.label = 'label menu',
-    this.onTap,
+    this.index = 0,
   }) : super(key: key);
 
   final Color? color;
   final String icon;
   final String? label;
-  final VoidCallback? onTap;
+  final int? index;
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: onTap,
+      onTap: () {
+        context.read<PageCubit>().changePage(index!);
+      },
       child: Container(
         color: Colors.transparent,
         height: 50.0,

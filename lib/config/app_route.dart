@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:maknews/pages/article_page.dart';
+import 'package:maknews/presentation/pages/article_page.dart';
 
-import '../pages/category_detail_page.dart';
-import '../pages/main_page.dart';
-import '../pages/splash_page.dart';
+import '../presentation/pages/category_detail_page.dart';
+import '../presentation/pages/main_page.dart';
+import '../presentation/pages/splash_page.dart';
 
 class AppRoutes {
   static Route<dynamic> _materialRoute(Widget view) {

@@ -1,9 +1,9 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:maknews/widgets/custom_placeholder.dart';
+import 'package:maknews/presentation/widgets/custom_placeholder.dart';
 
-import '../config/constant.dart';
+import '../../config/constant.dart';
 import '../widgets/app_bar.dart';
 
 class ArticlePage extends StatelessWidget {

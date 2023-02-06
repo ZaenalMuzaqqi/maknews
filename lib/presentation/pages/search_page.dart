@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../config/constant.dart';
+import '../../config/constant.dart';
 import '../widgets/card.dart';
 import '../widgets/search.dart';
 

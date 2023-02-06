@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shimmer/shimmer.dart';
 
-import '../config/constant.dart';
+import '../../config/constant.dart';
 
 class CustomPlaceholder extends StatelessWidget {
   const CustomPlaceholder(
